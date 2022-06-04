@@ -2,6 +2,7 @@
   --primary: #1e90ff;
   --secondary: #ffffff;
   --off-white: #eee;
+  --black: black;
 }
 
 .main {
@@ -15,19 +16,6 @@
   margin-top: 10px;
   width: 100%;
   height: 500px;
-}
-.side-draw {
-  width: 100px;
-  background-color: var(--off-white);
-}
-.side-draw > ul {
-  list-style: none;
-  padding: 10px 0 0 15px;
-  margin-bottom: 0;
-}
-.side-draw > ul > li {
-  padding: 10px 0;
-  font-weight: bold;
 }
 .footer {
   height: 50px;
@@ -55,4 +43,31 @@
 
 .justify-center {
   justify-content: center;
+}
+
+/* side drawer styles */
+.user-info {
+  width: 350px;
+}
+.side-draw {
+  margin-top: 30px;
+  width: 100px;
+}
+.rs-drawer-content {
+  background-color: var(--off-white);
+}
+.rs-drawer-body {
+  padding: 15px;
+}
+.rs-drawer-body-close {
+  top: 5px;
+  left: 5px;
+  color: var(--black);
+}
+.rs-drawer-left.rs-drawer-sm,
+.rs-drawer-right.rs-drawer-sm {
+  width: 500px;
+}
+.rs-list-hover .rs-list-item:hover {
+  cursor: pointer;
 }

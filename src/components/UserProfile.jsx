@@ -50,17 +50,22 @@ const UserProfile = () => {
   };
 
   const ActionCell = ({ rowData, dataKey, ...props }) => {
-  function handleAction() {
-    console.log(`id:${rowData[dataKey]}`);
-  }
-  return (
-    <Cell {...props} className="link-group">
-      <Button appearance="primary" size="xs" onClick={handleAction}>View Profile</Button>
-      <Divider vertical />
-      <Button appearance="primary" size="xs" onClick={handleAction}>View Post</Button>
-    </Cell>
-  );
-};
+    function handleAction(action) {
+      console.log("Posting data", action, rowData);
+      window.top.postMessage({ ...rowData, action }, window.location.origin);
+    }
+    return (
+      <Cell {...props} className="link-group">
+        <Button appearance="primary" size="xs" onClick={() => handleAction("PROFILE")}>
+          View Profile
+        </Button>
+        <Divider vertical />
+        <Button appearance="primary" size="xs" onClick={() => handleAction("POSTS")}>
+          View Post
+        </Button>
+      </Cell>
+    );
+  };
 
   return (
     <Table
@@ -71,7 +76,7 @@ const UserProfile = () => {
       onSortColumn={handleSortColumn}
       loading={loading}
       onRowClick={(data) => {
-        console.log(data);
+        console.log("Row clicked ", data.id);
       }}
     >
       <Column width={50} align="center" fixed sortable>
@@ -79,12 +84,12 @@ const UserProfile = () => {
         <Cell dataKey="id" />
       </Column>
 
-      <Column width={150} fixed sortable>
+      <Column width={200} fixed sortable>
         <HeaderCell>Name</HeaderCell>
         <Cell dataKey="name" />
       </Column>
 
-      <Column width={150} fixed sortable>
+      <Column width={200} fixed sortable>
         <HeaderCell>Username</HeaderCell>
         <Cell dataKey="username" />
       </Column>
