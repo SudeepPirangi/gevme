@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "rsuite/dist/rsuite.min.css";
+import "./App.css";
+import { Container, Header, Content, Footer } from "rsuite";
+
+import SimpleNavbar from "./components/Header/SimpleHeader";
+import SimpleFooter from "./components/Footer/SimpleFooter";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App show-container">
+      <Container className="col-flex space-between">
+        <Header>
+          <SimpleNavbar />
+        </Header>
+        <Content className="main row-flex">
+          <div className="main-frame">
+            <h1>Table</h1>
+            <iframe id="users-frame" src="/iframe" title="Users"></iframe>
+          </div>
+          <div className="side-draw">
+            <ul>
+              <li>Profile</li>
+              <li>Post</li>
+            </ul>
+          </div>
+        </Content>
+        <Footer>
+          <SimpleFooter />
+        </Footer>
+      </Container>
     </div>
   );
 }
