@@ -1,8 +1,9 @@
 :root {
   --primary: #1e90ff;
-  --secondary: #ffffff;
+  --secondary: #d71f1f;
   --off-white: #eee;
   --black: black;
+  --white: white;
 }
 
 .main {
@@ -23,24 +24,21 @@
   align-items: center;
 }
 
+/* generic styles */
 .row-flex {
   display: flex;
   flex-direction: row;
 }
-
 .col-flex {
   display: flex;
   flex-direction: column;
 }
-
 .imp-text {
   color: var(--primary);
 }
-
 .space-between {
   justify-content: space-between;
 }
-
 .justify-center {
   justify-content: center;
 }
@@ -48,26 +46,81 @@
 /* side drawer styles */
 .user-info {
   width: 350px;
+  padding: 50px 10px;
+}
+.user-info h2 {
+  font-size: 30px;
+  color: var(--primary);
 }
 .side-draw {
-  margin-top: 30px;
   width: 100px;
+  background-color: var(--white);
+  padding: 50px 10px;
 }
 .rs-drawer-content {
   background-color: var(--off-white);
 }
 .rs-drawer-body {
-  padding: 15px;
+  padding: 0;
 }
 .rs-drawer-body-close {
   top: 5px;
   left: 5px;
   color: var(--black);
 }
-.rs-drawer-left.rs-drawer-sm,
-.rs-drawer-right.rs-drawer-sm {
-  width: 500px;
+.rs-drawer-left.rs-drawer-xs,
+.rs-drawer-right.rs-drawer-xs {
+  width: 450px;
 }
 .rs-list-hover .rs-list-item:hover {
   cursor: pointer;
+}
+
+.dummy-dp {
+  padding: 10px;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  background-color: #ddd;
+  color: var(--secondary);
+  font-weight: bold;
+}
+.name {
+  padding-left: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--secondary);
+}
+.username {
+  font-weight: 500;
+}
+.profile-body {
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 2em 1em;
+}
+.post-section,
+.all-posts {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* post-card styles */
+.post-card {
+  background-color: var(--white);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.post-card .post-time {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.post-card .post-title {
+  font-size: 20px;
+  color: var(--secondary);
+  line-height: 22px;
+  margin: 5px 0;
+}
+.post-card .post-body {
+  font-weight: 500;
 }

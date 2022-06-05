@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { Drawer, List } from "rsuite";
-import Placeholder from "rsuite/Placeholder";
 
 import Profile from "./Profile";
 import Posts from "./Posts";
 
 const SideDrawer = ({ user, setUser, open, setOpen }) => {
   return (
-    <Drawer size={'xs'} backdrop={"static"} open={true} onClose={() => setOpen(false)}>
+    <Drawer size={"xs"} backdrop={"static"} open={open} onClose={() => setOpen(false)}>
       <Drawer.Body>
-        {/* <Placeholder.Paragraph /> */}
-        <div className="row-flex">
+        <div className="row-flex" style={{ height: "100%" }}>
           <div className="user-info">
-            {user && user.action === "PROFILE" && <Profile />}
-            {user && user.action === "POSTS" && <Posts />}
+            {user && user.action === "PROFILE" && <Profile user={user} />}
+            {user && user.action === "POSTS" && <Posts user={user} />}
           </div>
           <div className="side-draw">
             <List bordered hover>
