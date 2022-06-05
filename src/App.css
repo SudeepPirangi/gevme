@@ -127,9 +127,8 @@
   border-radius: 5px;
   padding: 2em 1em;
 }
-.post-section,
 .all-posts {
-  height: 100%;
+  height: calc(100vh - 200px);
   overflow-y: auto;
 }
 

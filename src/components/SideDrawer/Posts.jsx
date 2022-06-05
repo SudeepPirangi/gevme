@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Placeholder from "rsuite/Placeholder";
+// import Placeholder from "rsuite/Placeholder";
 
+import Loading from "../CommonUI/Loading";
 import PostCard from "./PostCard";
 
 const Posts = ({ user }) => {
@@ -24,7 +25,7 @@ const Posts = ({ user }) => {
         <div className="name">{user.name}</div>
       </div>
       <div className="all-posts" style={{ marginTop: "10px" }}>
-        {userPosts.length ? userPosts.map((post) => <PostCard key={post.id} post={post} />) : <Placeholder.Paragraph />}
+        {userPosts.length ? userPosts.map((post) => <PostCard key={post.id} post={post} />) : <Loading />}
       </div>
     </div>
   );
