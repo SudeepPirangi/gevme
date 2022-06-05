@@ -20,18 +20,22 @@ const Profile = ({ user }) => {
               <ControlLabel>Email</ControlLabel>
               <Control name="email" value={user.email} />
             </Group>
+
             <Group controlId="textarea">
               <ControlLabel>Address</ControlLabel>
               <Control name="address" value={user.address.street} />
             </Group>
+
             <Group controlId="phone">
               <ControlLabel>Phone</ControlLabel>
               <Control name="phone" value={user.phone} />
             </Group>
+
             <Group controlId="website">
               <ControlLabel>Website</ControlLabel>
               <Control name="website" value={user.website} />
             </Group>
+
             <Group controlId="companyName">
               <ControlLabel>Company Name</ControlLabel>
               <Control name="companyName" value={user.company.name} />

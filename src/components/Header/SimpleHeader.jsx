@@ -6,7 +6,7 @@ const SimpleNavbar = () => {
     <Navbar>
       <Navbar.Brand href="#">GEVME</Navbar.Brand>
       <Nav pullRight>
-        <Nav.Item>Username</Nav.Item>
+        <Nav.Item>Sudeep Pirangi</Nav.Item>
       </Nav>
     </Navbar>
   );

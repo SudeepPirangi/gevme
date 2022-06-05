@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button, Divider } from "rsuite";
 
+import { PROFILE, POSTS } from "./CommonUI/Constants";
+
 const UserProfile = () => {
   const [users, setUsers] = useState();
   const [sortColumn, setSortColumn] = useState();
@@ -13,7 +15,7 @@ const UserProfile = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((data) => data.json())
       .then((users) => {
-        console.log("Users", users);
+        // console.log("Users", users);
         setUsers(users);
       })
       .catch((error) => console.log("Failed to fetch Users from server", error));
@@ -56,11 +58,11 @@ const UserProfile = () => {
     }
     return (
       <Cell {...props} className="link-group">
-        <Button appearance="primary" size="xs" onClick={() => handleAction("PROFILE")}>
+        <Button appearance="primary" size="xs" onClick={() => handleAction(PROFILE)}>
           View Profile
         </Button>
         <Divider vertical />
-        <Button appearance="primary" size="xs" onClick={() => handleAction("POSTS")}>
+        <Button appearance="primary" size="xs" onClick={() => handleAction(POSTS)}>
           View Post
         </Button>
       </Cell>
@@ -76,7 +78,7 @@ const UserProfile = () => {
       onSortColumn={handleSortColumn}
       loading={loading}
       onRowClick={(data) => {
-        console.log("Row clicked ", data.id);
+        // console.log("Row clicked ", data.id);
       }}
     >
       <Column width={50} align="center" fixed sortable>

@@ -10,7 +10,7 @@ const Posts = ({ user }) => {
     fetch("https://jsonplaceholder.typicode.com/posts?userId=" + user.id)
       .then((data) => data.json())
       .then((posts) => {
-        console.log("User Posts", posts);
+        // console.log("User Posts", posts);
         setUserPosts([...posts]);
       })
       .catch((error) => console.log("Failed to fetch User Posts from server", error));

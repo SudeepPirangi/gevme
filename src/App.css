@@ -1,7 +1,7 @@
 :root {
-  --primary: #1e90ff;
-  --secondary: #d71f1f;
-  --off-white: #eee;
+  --primary: steelblue;
+  --secondary: rgb(223, 76, 76);
+  --off-white: rgba(238, 238, 238, 0.96);
   --black: black;
   --white: white;
 }
@@ -17,6 +17,8 @@
   margin-top: 10px;
   width: 100%;
   height: 500px;
+  border: 2px solid var(--primary);
+  border-radius: 5px;
 }
 .footer {
   height: 50px;
@@ -34,13 +36,36 @@
   flex-direction: column;
 }
 .imp-text {
-  color: var(--primary);
+  color: var(--black);
 }
 .space-between {
   justify-content: space-between;
 }
 .justify-center {
   justify-content: center;
+}
+.rs-btn-primary {
+  background-color: var(--primary);
+}
+.rs-table-header-row-wrapper {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* navbar styles */
+.rs-navbar-default {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.rs-navbar-brand {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 12px 20px;
+}
+.rs-navbar-item {
+  font-weight: 700;
 }
 
 /* side drawer styles */
@@ -50,7 +75,7 @@
 }
 .user-info h2 {
   font-size: 30px;
-  color: var(--primary);
+  color: var(--black);
 }
 .side-draw {
   width: 100px;
@@ -74,6 +99,10 @@
 }
 .rs-list-hover .rs-list-item:hover {
   cursor: pointer;
+}
+.active {
+  border-left: 4px solid var(--secondary);
+  color: var(--primary);
 }
 
 .dummy-dp {
@@ -117,7 +146,7 @@
 }
 .post-card .post-title {
   font-size: 20px;
-  color: var(--secondary);
+  color: var(--primary);
   line-height: 22px;
   margin: 5px 0;
 }

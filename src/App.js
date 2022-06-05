@@ -40,7 +40,7 @@ function App() {
         </Header>
         <Content className="main row-flex">
           <div className="main-frame">
-            <h1>Table</h1>
+            <h1>Users</h1>
             <iframe id="users-frame" src="/iframe" title="Users"></iframe>
           </div>
           <SideDrawer user={user} setUser={updateUser} open={open} setOpen={updateSideBar} />
